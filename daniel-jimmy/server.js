@@ -60,8 +60,7 @@ app.post('/articles', (request, response) => {
       request.body.authorUrl,
       request.body.category,
       request.body.publishedOn,
-      request.body.body,
-      console.log(request.body)
+      request.body.body
     ]
   )
     .then(function() {
@@ -115,7 +114,7 @@ app.delete('/articles', (request, response) => {
   // DONE: What number(s) of the full-stack-diagram.png image correspond to the following line of code? Which method of article.js is interacting with this particular piece of `server.js`? What part of CRUD is being enacted/managed by this particular piece of code?
   // 2, 3, 4: This code block correlates with "Article.prototype.truncateTable" on article.js as this code is what truncates the entire Database table. This code correlates to the "D" (Delete) in CRUD.
   client.query(
-    `DELETE * FROM articles;`
+    `DELETE FROM articles;`
   )
     .then(() => {
       response.send('Delete complete')
